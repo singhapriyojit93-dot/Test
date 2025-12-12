@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sanpai_official | Fast & Trusted MLBB Diamond Top-Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ccff;
+            --primary-dark: #0099cc;
+            --secondary: #ff00ff;
+            --dark-bg: #0a0e17;
+            --dark-card: #131827;
+            --dark-border: #1a223a;
+            --text-light: #e0e0ff;
+            --text-gray: #a0a8c8;
+            --success: #00ff9d;
+            --danger: #ff4757;
+            --warning: #ffcc00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 100, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 20%);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--dark-border);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
+        }
+
+        .logo i {
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { text-shadow: 0 0 5px var(--primary); }
+            50% { text-shadow: 0 0 15px var(--primary); }
+            100% { text-shadow: 0 0 5px var(--primary); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .contact-btn {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 204, 255, 0.3);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 204, 255, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 204, 255, 0.1) 0%, transparent 70%);
+            top: 10%;
+            left: 10%;
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 0, 255, 0.1) 0%, transparent 70%);
+            bottom: 10%;
+            right: 10%;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .badge {
+            background-color: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: 50px;
+            padding: 10px 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-5px);
+        }
+
+        .badge i {
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+
+        /* Diamond Packs Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .packs-section {
+            padding: 80px 0;
+        }
+
+        .pack-category {
+            margin-bottom: 60px;
+        }
+
+        .pack-category h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            padding-left: 20px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .packs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .pack-card {
+            background-color: var(--dark-card);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--dark-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pack-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 204, 255, 0.2);
+            border-color: var(--primary);
+        }
+
+        .pack-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .pack-card:hover::before {
+            left: 100%;
+        }
+
+        .pack-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .diamond-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+        }
+
+        .diamond-count {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .pack-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px rgba(0, 255, 157, 0.3);
+        }
+
+        .buy-btn {
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            box-shadow: 0 5px 15px rgba(0, 204, 255, 0.4);
+        }
+
+        /* Top-up Form Section */
+        .topup-section {
+            padding: 80px 0;
+            background-color: rgba(19, 24, 39, 0.5);
+            border-top: 1px solid var(--dark-border);
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        .topup-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .topup-form {
+            background-color: var(--dark-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--dark-border);
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(26, 34, 58, 0.7);
+            border: 1px solid var(--dark-border);
+            border-radius: 5px;
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(0, 204, 255, 0.2);
+        }
+
+        .total-price {
+            background: linear-gradient(90deg, var(--dark-card), rgba(0, 100, 255, 0.1));
+            border-radius: 5px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid var(--success);
+        }
+
+        .total-price h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .total-price .amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(90deg, var(--success), #00cc7a);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(90deg, #00cc7a, var(--success));
+            box-shadow: 0 5px 20px rgba(0, 255, 157, 0.4);
+        }
+
+        .payment-methods {
+            padding: 25px;
+            background-color: var(--dark-card);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--dark-border);
+        }
+
+        .payment-methods h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .payment-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .payment-icon {
+            background-color: rgba(26, 34, 58, 0.7);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 60px;
+            font-size: 2rem;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .payment-icon:hover {
+            transform: translateY(-5px);
+            background-color: rgba(0, 204, 255, 0.2);
+            color: var(--primary);
+        }
+
+        /* Fast Delivery Section */
+        .delivery-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .delivery-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .delivery-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .delivery-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .timer {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--dark-card);
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--success);
+            border: 2px solid var(--success);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .timer i {
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #080c15;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--dark-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .footer-column p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .whatsapp-link:hover {
+            background-color: #1da851;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--dark-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--dark-border);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            padding: 100px 0 50px;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .admin-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .back-to-site {
+            background-color: var(--dark-card);
+            color: var(--text-light);
+            border: 1px solid var(--dark-border);
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-site:hover {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .admin-tab {
+            background-color: var(--dark-card);
+            color: var(--text-light);
+            border: 1px solid var(--dark-border);
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .admin-tab.active {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+        }
+
+        .admin-tab:hover:not(.active) {
+            background-color: rgba(0, 204, 255, 0.1);
+        }
+
+        .admin-content {
+            background-color: var(--dark-card);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--dark-border);
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .admin-table th {
+            background-color: rgba(0, 204, 255, 0.1);
+            padding: 15px;
+            text-align: left;
+            color: var(--primary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--dark-border);
+        }
+
+        .admin-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--dark-border);
+            color: var(--text-light);
+        }
+
+        .admin-table tr:hover {
+            background-color: rgba(0, 204, 255, 0.05);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background-color: rgba(255, 204, 0, 0.2);
+            color: var(--warning);
+        }
+
+        .status-completed {
+            background-color: rgba(0, 255, 157, 0.2);
+            color: var(--success);
+        }
+
+        .status-cancelled {
+            background-color: rgba(255, 71, 87, 0.2);
+            color: var(--danger);
+        }
+
+        .action-btn {
+            background-color: var(--dark-card);
+            color: var(--text-light);
+            border: 1px solid var(--dark-border);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .action-btn:hover {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .topup-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .packs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .pack-category h3 {
+                font-size: 1.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 130px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .packs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+            
+            .badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timer {
+                font-size: 1.5rem;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <span>sanpai_official</span>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#packs">Diamond Packs</a></li>
+                <li><a href="#topup">Top-Up</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#" id="adminLink">Admin</a></li>
+            </ul>
+            
+            <button class="contact-btn" id="contactBtn">
+                <i class="fab fa-whatsapp"></i> DM me: 60261 22449
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Website Content -->
+    <main id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Fast & Trusted MLBB Diamond Top-Up | sanpai_official</h1>
+                <p>Get your Mobile Legends diamonds instantly with secure payment methods and 24/7 customer support. No login required!</p>
+                
+                <div class="badges">
+                    <div class="badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Instant Delivery (1-5 min)</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% Safe & Secure</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-user-check"></i>
+                        <span>No Login Required</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diamond Packs Section -->
+        <section class="packs-section" id="packs">
+            <div class="container">
+                <h2 class="section-title">Diamond Packs</h2>
+                
+                <!-- Small Packs -->
+                <div class="pack-category">
+                    <h3>Small Packs</h3>
+                    <div class="packs-grid" id="smallPacks">
+                        <!-- Small packs will be inserted here by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Large Packs -->
+                <div class="pack-category">
+                    <h3>Large Packs</h3>
+                    <div class="packs-grid" id="largePacks">
+                        <!-- Large packs will be inserted here by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Passes -->
+                <div class="pack-category">
+                    <h3>Passes</h3>
+                    <div class="packs-grid" id="passes">
+                        <!-- Passes will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top-up Form Section -->
+        <section class="topup-section" id="topup">
+            <div class="container">
+                <h2 class="section-title">Top-Up Now</h2>
+                
+                <div class="topup-container">
+                    <div class="topup-form">
+                        <h3 class="form-title">Fill Top-Up Details</h3>
+                        
+                        <form id="topupForm">
+                            <div class="form-group">
+                                <label for="playerId">Player ID</label>
+                                <input type="text" id="playerId" placeholder="Enter your Player ID" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="serverId">Server ID</label>
+                                <input type="text" id="serverId" placeholder="Enter your Server ID (e.g., 1234)" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="whatsapp">WhatsApp Number</label>
+                                <input type="tel" id="whatsapp" placeholder="Enter your WhatsApp number" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="diamondPack">Select Diamond Pack</label>
+                                <select id="diamondPack" required>
+                                    <option value="">Choose a pack</option>
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                            </div>
+                            
+                            <div class="total-price">
+                                <h4>Total Amount:</h4>
+                                <div class="amount" id="totalAmount">0 rs</div>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Proceed to Payment
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h3>Payment Methods</h3>
+                        <p>We accept various secure payment methods for your convenience.</p>
+                        
+                        <div class="payment-icons">
+                            <div class="payment-icon">
+                                <i class="fab fa-cc-paypal"></i>
+                            </div>
+                            <div class="payment-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="payment-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="payment-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="payment-icon">
+                                <i class="fab fa-google-pay"></i>
+                            </div>
+                            <div class="payment-icon">
+                                <i class="fab fa-apple-pay"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fast Delivery Section -->
+        <section class="delivery-section" id="delivery">
+            <div class="container">
+                <div class="delivery-content">
+                    <h2>Fast Diamond Delivery</h2>
+                    <p>We guarantee instant delivery of diamonds to your Mobile Legends account within 1-5 minutes after successful payment confirmation.</p>
+                    
+                    <div class="timer">
+                        <i class="fas fa-bolt"></i>
+                        <span>1-5 Minutes</span>
+                    </div>
+                    
+                    <p>No need to wait for hours! Our automated system ensures your diamonds are delivered instantly.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Admin Panel (Hidden by default) -->
+    <section class="admin-panel" id="adminPanel">
+        <div class="container">
+            <div class="admin-header">
+                <h2 class="admin-title">Admin Dashboard</h2>
+                <button class="back-to-site" id="backToSite">
+                    <i class="fas fa-arrow-left"></i> Back to Site
+                </button>
+            </div>
+            
+            <div class="admin-tabs">
+                <div class="admin-tab active" data-tab="orders">Orders</div>
+                <div class="admin-tab" data-tab="prices">Diamond Prices</div>
+                <div class="admin-tab" data-tab="customers">Customers</div>
+            </div>
+            
+            <div class="admin-content">
+                <!-- Orders Tab -->
+                <div class="admin-tab-content" id="ordersTab">
+                    <h3>Recent Orders</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Player ID</th>
+                                <th>Pack</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTable">
+                            <!-- Orders will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Prices Tab -->
+                <div class="admin-tab-content" id="pricesTab" style="display: none;">
+                    <h3>Manage Diamond Prices</h3>
+                    <div id="priceManagement">
+                        <!-- Price management will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Customers Tab -->
+                <div class="admin-tab-content" id="customersTab" style="display: none;">
+                    <h3>Customer Information</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Customer ID</th>
+                                <th>Player ID</th>
+                                <th>WhatsApp</th>
+                                <th>Total Orders</th>
+                                <th>Total Spent</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customersTable">
+                            <!-- Customers will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>sanpai_official</h3>
+                    <p>Fast & trusted MLBB diamond top-up service with instant delivery and 24/7 customer support.</p>
+                    <a href="https://wa.me/916026122449" class="whatsapp-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i> DM me: 60261 22449
+                    </a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" style="color: var(--text-gray); text-decoration: none;">Home</a></li>
+                        <li><a href="#packs" style="color: var(--text-gray); text-decoration: none;">Diamond Packs</a></li>
+                        <li><a href="#topup" style="color: var(--text-gray); text-decoration: none;">Top-Up</a></li>
+                        <li><a href="#delivery" style="color: var(--text-gray); text-decoration: none;">Delivery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>For any inquiries or support, contact us via WhatsApp.</p>
+                    <p>We're available 24/7 to assist you.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 sanpai_official. All rights reserved. | Mobile Legends: Bang Bang is a registered trademark of Moonton.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Diamond Packs Data
+        const diamondPacks = {
+            small: [
+                { diamonds: 5, price: 17 },
+                { diamonds: 11, price: 23 },
+                { diamonds: 14, price: 30 },
+                { diamonds: 22, price: 43 },
+                { diamonds: 55, price: 85 },
+                { diamonds: 86, price: 115 }
+            ],
+            large: [
+                { diamonds: 110, price: 155 },
+                { diamonds: 165, price: 225 },
+                { diamonds: 257, price: 335 },
+                { diamonds: 343, price: 465 },
+                { diamonds: 429, price: 565 },
+                { diamonds: 565, price: 675 },
+                { diamonds: 706, price: 856 },
+                { diamonds: 963, price: 1250 }
+            ],
+            passes: [
+                { name: "Weekly Pass", diamonds: "Weekly Pass", price: 150 },
+                { name: "Twilight Pass", diamonds: "Twilight Pass", price: 750 }
+            ]
+        };
+
+        // Sample orders for admin panel
+        const sampleOrders = [
+            { id: "ORD001", playerId: "123456789", pack: "86 Diamonds", amount: 115, status: "completed" },
+            { id: "ORD002", playerId: "987654321", pack: "110 Diamonds", amount: 155, status: "pending" },
+            { id: "ORD003", playerId: "456789123", pack: "Twilight Pass", amount: 750, status: "completed" },
+            { id: "ORD004", playerId: "321654987", pack: "257 Diamonds", amount: 335, status: "cancelled" },
+            { id: "ORD005", playerId: "789123456", pack: "55 Diamonds", amount: 85, status: "pending" }
+        ];
+
+        // Sample customers for admin panel
+        const sampleCustomers = [
+            { id: "CUST001", playerId: "123456789", whatsapp: "+91 98765 43210", orders: 5, spent: 1250 },
+            { id: "CUST002", playerId: "987654321", whatsapp: "+91 87654 32109", orders: 2, spent: 310 },
+            { id: "CUST003", playerId: "456789123", whatsapp: "+91 76543 21098", orders: 1, spent: 750 },
+            { id: "CUST004", playerId: "321654987", whatsapp: "+91 65432 10987", orders: 3, spent: 675 }
+        ];
+
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const contactBtn = document.getElementById('contactBtn');
+        const adminLink = document.getElementById('adminLink');
+        const mainContent = document.getElementById('mainContent');
+        const adminPanel = document.getElementById('adminPanel');
+        const backToSite = document.getElementById('backToSite');
+        const smallPacksContainer = document.getElementById('smallPacks');
+        const largePacksContainer = document.getElementById('largePacks');
+        const passesContainer = document.getElementById('passes');
+        const diamondPackSelect = document.getElementById('diamondPack');
+        const totalAmountElement = document.getElementById('totalAmount');
+        const topupForm = document.getElementById('topupForm');
+        const adminTabs = document.querySelectorAll('.admin-tab');
+        const ordersTable = document.getElementById('ordersTable');
+        const priceManagement = document.getElementById('priceManagement');
+        const customersTable = document.getElementById('customersTable');
+
+        // Initialize the website
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render diamond packs
+            renderDiamondPacks();
+            
+            // Populate diamond pack select options
+            populatePackSelect();
+            
+            // Render admin panel data
+            renderAdminOrders();
+            renderPriceManagement();
+            renderCustomers();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Initialize animations
+            initAnimations();
+        });
+
+        // Render diamond packs to the page
+        function renderDiamondPacks() {
+            // Render small packs
+            diamondPacks.small.forEach(pack => {
+                const packElement = createPackElement(pack.diamonds, pack.price);
+                smallPacksContainer.appendChild(packElement);
+            });
+            
+            // Render large packs
+            diamondPacks.large.forEach(pack => {
+                const packElement = createPackElement(pack.diamonds, pack.price);
+                largePacksContainer.appendChild(packElement);
+            });
+            
+            // Render passes
+            diamondPacks.passes.forEach(pack => {
+                const packElement = createPassElement(pack.name, pack.price);
+                passesContainer.appendChild(packElement);
+            });
+        }
+
+        // Create a diamond pack element
+        function createPackElement(diamonds, price) {
+            const div = document.createElement('div');
+            div.className = 'pack-card';
+            div.innerHTML = `
+                <div class="pack-header">
+                    <div class="diamond-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="diamond-count">${diamonds}💎</div>
+                </div>
+                <div class="pack-price">${price} rs</div>
+                <button class="buy-btn" data-diamonds="${diamonds}" data-price="${price}">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            `;
+            
+            // Add event listener to the buy button
+            const buyBtn = div.querySelector('.buy-btn');
+            buyBtn.addEventListener('click', function() {
+                selectDiamondPack(diamonds, price);
+            });
+            
+            return div;
+        }
+
+        // Create a pass element
+        function createPassElement(name, price) {
+            const div = document.createElement('div');
+            div.className = 'pack-card';
+            div.innerHTML = `
+                <div class="pack-header">
+                    <div class="diamond-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="diamond-count">${name}</div>
+                </div>
+                <div class="pack-price">${price} rs</div>
+                <button class="buy-btn" data-diamonds="${name}" data-price="${price}">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            `;
+            
+            // Add event listener to the buy button
+            const buyBtn = div.querySelector('.buy-btn');
+            buyBtn.addEventListener('click', function() {
+                selectDiamondPack(name, price);
+            });
+            
+            return div;
+        }
+
+        // Populate the diamond pack select dropdown
+        function populatePackSelect() {
+            // Clear existing options
+            diamondPackSelect.innerHTML = '<option value="">Choose a pack</option>';
+            
+            // Add small packs
+            diamondPacks.small.forEach(pack => {
+                const option = document.createElement('option');
+                option.value = `${pack.diamonds}|${pack.price}`;
+                option.textContent = `${pack.diamonds} Diamonds - ${pack.price} rs`;
+                diamondPackSelect.appendChild(option);
+            });
+            
+            // Add large packs
+            diamondPacks.large.forEach(pack => {
+                const option = document.createElement('option');
+                option.value = `${pack.diamonds}|${pack.price}`;
+                option.textContent = `${pack.diamonds} Diamonds - ${pack.price} rs`;
+                diamondPackSelect.appendChild(option);
+            });
+            
+            // Add passes
+            diamondPacks.passes.forEach(pack => {
+                const option = document.createElement('option');
+                option.value = `${pack.diamonds}|${pack.price}`;
+                option.textContent = `${pack.name} - ${pack.price} rs`;
+                diamondPackSelect.appendChild(option);
+            });
+            
+            // Add event listener to update price when selection changes
+            diamondPackSelect.addEventListener('change', function() {
+                if (this.value) {
+                    const [diamonds, price] = this.value.split('|');
+                    updateTotalPrice(price);
+                } else {
+                    updateTotalPrice(0);
+                }
+            });
+        }
+
+        // Select a diamond pack (when buy button is clicked)
+        function selectDiamondPack(diamonds, price) {
+            // Find and select the corresponding option in the dropdown
+            const optionValue = `${diamonds}|${price}`;
+            diamondPackSelect.value = optionValue;
+            
+            // Update the total price
+            updateTotalPrice(price);
+            
+            // Scroll to the top-up form
+            document.getElementById('topup').scrollIntoView({ behavior: 'smooth' });
+            
+            // Focus on the first form field
+            document.getElementById('playerId').focus();
+        }
+
+        // Update the total price display
+        function updateTotalPrice(price) {
+            totalAmountElement.textContent = `${price} rs`;
+        }
+
+        // Render admin orders
+        function renderAdminOrders() {
+            ordersTable.innerHTML = '';
+            
+            sampleOrders.forEach(order => {
+                const row = document.createElement('tr');
+                
+                // Determine status badge class
+                let statusClass = 'status-pending';
+                if (order.status === 'completed') statusClass = 'status-completed';
+                if (order.status === 'cancelled') statusClass = 'status-cancelled';
+                
+                row.innerHTML = `
+                    <td>${order.id}</td>
+                    <td>${order.playerId}</td>
+                    <td>${order.pack}</td>
+                    <td>${order.amount} rs</td>
+                    <td><span class="status-badge ${statusClass}">${order.status}</span></td>
+                    <td>
+                        <button class="action-btn" onclick="updateOrderStatus('${order.id}')">
+                            <i class="fas fa-edit"></i> Update
+                        </button>
+                    </td>
+                `;
+                
+                ordersTable.appendChild(row);
+            });
+        }
+
+        // Render price management interface
+        function renderPriceManagement() {
+            let priceManagementHTML = '<div class="form-row">';
+            
+            // Small packs
+            priceManagementHTML += '<div><h4>Small Packs</h4>';
+            diamondPacks.small.forEach((pack, index) => {
+                priceManagementHTML += `
+                    <div class="form-group">
+                        <label>${pack.diamonds} Diamonds</label>
+                        <input type="number" value="${pack.price}" id="small-${index}" class="price-input" data-type="small" data-index="${index}">
+                    </div>
+                `;
+            });
+            priceManagementHTML += '</div>';
+            
+            // Large packs
+            priceManagementHTML += '<div><h4>Large Packs</h4>';
+            diamondPacks.large.forEach((pack, index) => {
+                priceManagementHTML += `
+                    <div class="form-group">
+                        <label>${pack.diamonds} Diamonds</label>
+                        <input type="number" value="${pack.price}" id="large-${index}" class="price-input" data-type="large" data-index="${index}">
+                    </div>
+                `;
+            });
+            priceManagementHTML += '</div>';
+            
+            // Passes
+            priceManagementHTML += '<div><h4>Passes</h4>';
+            diamondPacks.passes.forEach((pack, index) => {
+                priceManagementHTML += `
+                    <div class="form-group">
+                        <label>${pack.name}</label>
+                        <input type="number" value="${pack.price}" id="pass-${index}" class="price-input" data-type="passes" data-index="${index}">
+                    </div>
+                `;
+            });
+            priceManagementHTML += '</div></div>';
+            
+            priceManagementHTML += `
+                <div class="form-controls">
+                    <button class="action-btn" id="savePrices">
+                        <i class="fas fa-save"></i> Save All Prices
+                    </button>
+                    <button class="action-btn" id="resetPrices">
+                        <i class="fas fa-undo"></i> Reset to Default
+                    </button>
+                </div>
+            `;
+            
+            priceManagement.innerHTML = priceManagementHTML;
+            
+            // Add event listeners to price inputs
+            document.querySelectorAll('.price-input').forEach(input => {
+                input.addEventListener('change', function() {
+                    const type = this.dataset.type;
+                    const index = parseInt(this.dataset.index);
+                    const newPrice = parseInt(this.value);
+                    
+                    // Update the price in the data
+                    if (type === 'small') {
+                        diamondPacks.small[index].price = newPrice;
+                    } else if (type === 'large') {
+                        diamondPacks.large[index].price = newPrice;
+                    } else if (type === 'passes') {
+                        diamondPacks.passes[index].price = newPrice;
+                    }
+                    
+                    // Update the UI
+                    updatePackDisplay();
+                    populatePackSelect();
+                });
+            });
+            
+            // Save prices button
+            document.getElementById('savePrices').addEventListener('click', function() {
+                alert('Prices saved successfully!');
+                // In a real application, you would send this data to a server
+            });
+            
+            // Reset prices button
+            document.getElementById('resetPrices').addEventListener('click', function() {
+                if (confirm('Are you sure you want to reset all prices to default?')) {
+                    // Reset prices to default
+                    diamondPacks.small = [
+                        { diamonds: 5, price: 17 },
+                        { diamonds: 11, price: 23 },
+                        { diamonds: 14, price: 30 },
+                        { diamonds: 22, price: 43 },
+                        { diamonds: 55, price: 85 },
+                        { diamonds: 86, price: 115 }
+                    ];
+                    
+                    diamondPacks.large = [
+                        { diamonds: 110, price: 155 },
+                        { diamonds: 165, price: 225 },
+                        { diamonds: 257, price: 335 },
+                        { diamonds: 343, price: 465 },
+                        { diamonds: 429, price: 565 },
+                        { diamonds: 565, price: 675 },
+                        { diamonds: 706, price: 856 },
+                        { diamonds: 963, price: 1250 }
+                    ];
+                    
+                    diamondPacks.passes = [
+                        { name: "Weekly Pass", diamonds: "Weekly Pass", price: 150 },
+                        { name: "Twilight Pass", diamonds: "Twilight Pass", price: 750 }
+                    ];
+                    
+                    // Update the UI
+                    renderPriceManagement();
+                    updatePackDisplay();
+                    populatePackSelect();
+                    
+                    alert('Prices reset to default!');
+                }
+            });
+        }
+
+        // Update pack display on the main page
+        function updatePackDisplay() {
+            // Clear existing packs
+            smallPacksContainer.innerHTML = '';
+            largePacksContainer.innerHTML = '';
+            passesContainer.innerHTML = '';
+            
+            // Re-render packs with updated prices
+            renderDiamondPacks();
+        }
+
+        // Render customers in admin panel
+        function renderCustomers() {
+            customersTable.innerHTML = '';
+            
+            sampleCustomers.forEach(customer => {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td>${customer.id}</td>
+                    <td>${customer.playerId}</td>
+                    <td>${customer.whatsapp}</td>
+                    <td>${customer.orders}</td>
+                    <td>${customer.spent} rs</td>
+                `;
+                
+                customersTable.appendChild(row);
+            });
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+            
+            // Contact button
+            contactBtn.addEventListener('click', function() {
+                window.open('https://wa.me/916026122449', '_blank');
+            });
+            
+            // Admin link
+            adminLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                mainContent.style.display = 'none';
+                adminPanel.style.display = 'block';
+                window.scrollTo(0, 0);
+            });
+            
+            // Back to site button
+            backToSite.addEventListener('click', function() {
+                adminPanel.style.display = 'none';
+                mainContent.style.display = 'block';
+                window.scrollTo(0, 0);
+            });
+            
+            // Admin tabs
+            adminTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    adminTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Hide all tab content
+                    document.querySelectorAll('.admin-tab-content').forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    
+                    // Show the selected tab content
+                    const tabId = this.dataset.tab + 'Tab';
+                    document.getElementById(tabId).style.display = 'block';
+                });
+            });
+            
+            // Top-up form submission
+            topupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const playerId = document.getElementById('playerId').value;
+                const serverId = document.getElementById('serverId').value;
+                const whatsapp = document.getElementById('whatsapp').value;
+                const diamondPack = document.getElementById('diamondPack').value;
+                
+                if (!diamondPack) {
+                    alert('Please select a diamond pack!');
+                    return;
+                }
+                
+                const [diamonds, price] = diamondPack.split('|');
+                
+                // In a real application, you would send this data to a server
+                // For demo purposes, we'll just show a success message
+                alert(`Order submitted successfully!\n\nPlayer ID: ${playerId}\nServer ID: ${serverId}\nWhatsApp: ${whatsapp}\nPack: ${diamonds} Diamonds\nAmount: ${price} rs\n\nYou will receive a WhatsApp message shortly for payment instructions.`);
+                
+                // Reset form
+                topupForm.reset();
+                updateTotalPrice(0);
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Initialize animations
+        function initAnimations() {
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe pack cards and other elements
+            document.querySelectorAll('.pack-card, .badge, .payment-icon').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Update order status (for admin panel)
+        window.updateOrderStatus = function(orderId) {
+            const newStatus = prompt(`Update status for order ${orderId} (pending/completed/cancelled):`);
+            
+            if (newStatus && ['pending', 'completed', 'cancelled'].includes(newStatus.toLowerCase())) {
+                // Update the order in the sample data
+                const order = sampleOrders.find(o => o.id === orderId);
+                if (order) {
+                    order.status = newStatus.toLowerCase();
+                    renderAdminOrders();
+                    alert(`Order ${orderId} status updated to ${newStatus}`);
+                }
+            } else if (newStatus) {
+                alert('Invalid status. Please enter: pending, completed, or cancelled.');
+            }
+        };
+    </script>
+</body>
+  </html>
